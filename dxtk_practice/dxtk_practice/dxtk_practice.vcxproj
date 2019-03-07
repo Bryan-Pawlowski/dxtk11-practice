@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(SolutionDir)packages\directxtk_desktop_2015.2019.2.7.1\lib\Win32\Debug\DirectXTK.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -88,7 +88,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(SolutionDir)packages\directxtk_desktop_2015.2019.2.7.1\lib\x64\Debug\DirectXTK.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -102,7 +102,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -118,7 +118,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
