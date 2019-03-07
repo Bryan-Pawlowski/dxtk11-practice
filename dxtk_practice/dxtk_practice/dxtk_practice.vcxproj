@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="config\config.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -134,11 +135,13 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AppMan.h" />
-    <ClInclude Include="common.h" />
-    <ClInclude Include="dxtk_all.h" />
-    <ClInclude Include="GfxApp.h" />
-    <ClInclude Include="WinMainParameters.h" />
+    <ClInclude Include="Configurator.h" />
+    <ClInclude Include="inc\app\AppMan.h" />
+    <ClInclude Include="inc\app\GfxApp.h" />
+    <ClInclude Include="inc\common.h" />
+    <ClInclude Include="inc\dxtk_all.h" />
+    <ClInclude Include="inc\json\json.hpp" />
+    <ClInclude Include="inc\WinMainParameters.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

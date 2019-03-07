@@ -1,3 +1,4 @@
+#include "Configurator.h"
 #include "dxtk_all.h"
 #include "GfxApp.h"
 #include "AppMan.h"
@@ -5,11 +6,14 @@
 
 int main()
 {
-	AppManager::Apps which = AppManager::Apps::Default;
 
-	GFXApp * App = AppManager::selectApp(which);
+	JConfig jconf("./config/config.json");
 
-	App->main();
+	JConfig::AppConfig appConf = jconf.GetAppConfig();
+
+	GFXApp * App = AppManager::selectApp(appConf.appName.c_str());
+
+	if(App != nullptr) App->main();
 
 	return 0;
 }

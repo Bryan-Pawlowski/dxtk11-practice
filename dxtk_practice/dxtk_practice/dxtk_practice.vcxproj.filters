@@ -13,9 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\app">
+      <UniqueIdentifier>{a7cb08c1-44c7-4bad-b7db-d34c83631850}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\json">
+      <UniqueIdentifier>{316052be-b588-459e-8d35-fca7ae693cc3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="config\config.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -26,19 +35,25 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dxtk_all.h">
+    <ClInclude Include="inc\json\json.hpp">
+      <Filter>Header Files\json</Filter>
+    </ClInclude>
+    <ClInclude Include="Configurator.h">
+      <Filter>Header Files\json</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\app\GfxApp.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\app\AppMan.h">
+      <Filter>Header Files\app</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GfxApp.h">
+    <ClInclude Include="inc\dxtk_all.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="WinMainParameters.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AppMan.h">
+    <ClInclude Include="inc\WinMainParameters.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

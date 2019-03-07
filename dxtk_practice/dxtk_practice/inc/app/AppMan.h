@@ -85,4 +85,15 @@ namespace AppManager {
 		return target;
 	}
 
+	GFXApp * selectApp(const char * appname)
+	{
+		if (strcmp(appname, app_name[Default]) == 0) {
+			return selectApp(Default);
+		}
+		else {
+			std::cout << "No app by name: \"" << appname << "\" has been implemented!" << std::endl;
+			return nullptr;
+		}
+	}
+
 }
