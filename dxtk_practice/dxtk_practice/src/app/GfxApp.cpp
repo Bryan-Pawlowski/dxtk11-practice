@@ -1,11 +1,7 @@
 #include "GfxApp.h"
 #include "common.h"
 
-using namespace WinMainParameters;
-using namespace DirectX;
-using namespace DirectX::SimpleMath;
 
-using Microsoft::WRL::ComPtr;
 
 // this is the main message handler for the program
 LRESULT CALLBACK WindowProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
