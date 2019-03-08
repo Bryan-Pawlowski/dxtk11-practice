@@ -162,8 +162,8 @@ int GFXApp::initGraphics()
 
 	viewport.TopLeftX = 0;
 	viewport.TopLeftY = 0;
-	viewport.Width = 800;
-	viewport.Height = 600;
+	viewport.Width = m_wX;
+	viewport.Height = m_wY;
 
 	devcon->RSSetViewports(1, &viewport);
 

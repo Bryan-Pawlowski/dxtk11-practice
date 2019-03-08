@@ -76,11 +76,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DirectXTK\Inc;$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalDependencies>$(SolutionDir)packages\directxtk_desktop_2015.2019.2.7.1\lib\Win32\Debug\DirectXTK.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -88,11 +86,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DirectXTK\Inc;$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
-    <Link>
-      <AdditionalDependencies>$(SolutionDir)packages\directxtk_desktop_2015.2019.2.7.1\lib\x64\Debug\DirectXTK.lib;%(AdditionalDependencies)</AdditionalDependencies>
-    </Link>
+    <Link />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -102,12 +98,11 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DirectXTK\Inc;$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>$(SolutionDir)packages\directxtk_desktop_2015.2019.2.7.1\lib\Win32\Release\DirectXTK.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -118,39 +113,36 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;E:\GitHub\dxtk_practice\packages\directxtk_desktop_2015.2019.2.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)DirectXTK\Inc;$(ProjectDir)inc\json;$(ProjectDir)inc\app;$(ProjectDir)inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>$(SolutionDir)packages\directxtk_desktop_2015.2019.2.7.1\lib\x64\Release\DirectXTK.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <None Include="config\config.json" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="GfxApp.cpp" />
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="inc\app\AppMan.h" />
     <ClInclude Include="inc\app\GfxApp.h" />
+    <ClInclude Include="inc\app\TriangleApp.h" />
     <ClInclude Include="inc\common.h" />
     <ClInclude Include="inc\dxtk_all.h" />
     <ClInclude Include="inc\json\Configurator.h" />
     <ClInclude Include="inc\json\json.hpp" />
     <ClInclude Include="inc\WinMainParameters.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\app\GfxApp.cpp" />
+    <ClCompile Include="src\app\TriangleApp.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DirectXTK\DirectXTK_Desktop_2017_Win10.vcxproj">
+      <Project>{e0b52ae7-e160-4d32-bf3f-910b785e5a8e}</Project>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
-  <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\packages\directxtk_desktop_2015.2019.2.7.1\build\native\directxtk_desktop_2015.targets" Condition="Exists('..\packages\directxtk_desktop_2015.2019.2.7.1\build\native\directxtk_desktop_2015.targets')" />
-  </ImportGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\directxtk_desktop_2015.2019.2.7.1\build\native\directxtk_desktop_2015.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\directxtk_desktop_2015.2019.2.7.1\build\native\directxtk_desktop_2015.targets'))" />
-  </Target>
+  <ImportGroup Label="ExtensionTargets" />
 </Project>

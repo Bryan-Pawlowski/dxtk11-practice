@@ -1,6 +1,7 @@
 #pragma once
 
 #include "dxtk_all.h"
+#include "common.h"
 
 #pragma comment (lib, "d3d11.lib")
 #pragma comment (lib, "d3dcompiler.lib")
@@ -13,12 +14,12 @@ using Microsoft::WRL::ComPtr;
 
 class GFXApp
 {
-private:
+protected:
 	HINSTANCE	_hInstance;
 	HINSTANCE	_hPrevInstance;
+	HWND		_hWnd;
 	UINT		m_wX;
 	UINT		m_wY;
-	HWND		_hWnd;
 
 public:
 

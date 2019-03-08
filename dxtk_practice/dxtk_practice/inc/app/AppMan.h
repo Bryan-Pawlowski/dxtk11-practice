@@ -1,5 +1,6 @@
 #pragma once
 #include "GfxApp.h"
+#include "TriangleApp.h"
 #include "common.h"
 #include <map>
 
@@ -8,7 +9,7 @@
 #ifndef APPS
 #define APPS \
 X(Default, "Default", true)   \
-X(Triangle, "Triangle", false) \
+X(Triangle, "Triangle", true) \
 X(TriangleLighting, "TriangleLighting", false) \
 X(TriangleSpin, "TriangleSpin", false) \
 X(CubeSpin, "CubeSpin", false) \
@@ -54,8 +55,8 @@ namespace AppManager {
 				target = new GFXApp();
 				break;
 			case Triangle:
-				//TODO: target = new TriangleApp();
-				//break;
+				target = new TriangleApp();
+				break;
 			case TriangleLighting:
 				//TODO: target = new TriangleLightingApp();
 				//break;
@@ -89,6 +90,9 @@ namespace AppManager {
 	{
 		if (strcmp(appname, app_name[Default]) == 0) {
 			return selectApp(Default);
+		}
+		else if (strcmp(appname, app_name[Triangle]) == 0) {
+			return selectApp(Triangle);
 		}
 		else {
 			std::cout << "No app by name: \"" << appname << "\" has been implemented!" << std::endl;
