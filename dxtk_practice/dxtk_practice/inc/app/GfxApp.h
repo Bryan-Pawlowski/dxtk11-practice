@@ -10,9 +10,11 @@ using Microsoft::WRL::ComPtr;
 class GFXApp
 {
 private:
-	HINSTANCE _hInstance;
-	HINSTANCE _hPrevInstance;
-	HWND _hWnd;
+	HINSTANCE	_hInstance;
+	HINSTANCE	_hPrevInstance;
+	UINT		m_wX;
+	UINT		m_wY;
+	HWND		_hWnd;
 
 public:
 
@@ -24,7 +26,7 @@ public:
 	GFXApp();
 	~GFXApp();
 
-	virtual int main();
+	virtual int main(UINT, UINT);
 	virtual int mainLoop();
 	virtual int initWindow();
 	virtual int initGraphics();

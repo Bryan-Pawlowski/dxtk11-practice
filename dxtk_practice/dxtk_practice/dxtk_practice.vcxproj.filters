@@ -38,9 +38,6 @@
     <ClInclude Include="inc\json\json.hpp">
       <Filter>Header Files\json</Filter>
     </ClInclude>
-    <ClInclude Include="Configurator.h">
-      <Filter>Header Files\json</Filter>
-    </ClInclude>
     <ClInclude Include="inc\app\GfxApp.h">
       <Filter>Header Files\app</Filter>
     </ClInclude>
@@ -55,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="inc\WinMainParameters.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inc\json\Configurator.h">
+      <Filter>Header Files\json</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

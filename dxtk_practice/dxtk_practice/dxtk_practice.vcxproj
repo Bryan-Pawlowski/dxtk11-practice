@@ -135,11 +135,11 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Configurator.h" />
     <ClInclude Include="inc\app\AppMan.h" />
     <ClInclude Include="inc\app\GfxApp.h" />
     <ClInclude Include="inc\common.h" />
     <ClInclude Include="inc\dxtk_all.h" />
+    <ClInclude Include="inc\json\Configurator.h" />
     <ClInclude Include="inc\json\json.hpp" />
     <ClInclude Include="inc\WinMainParameters.h" />
   </ItemGroup>

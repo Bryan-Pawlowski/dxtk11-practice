@@ -36,9 +36,12 @@ GFXApp::~GFXApp()
 	devcon->Release();
 }
 
-int GFXApp::main()
+int GFXApp::main(UINT wX, UINT wY)
 {
 	std::cout << "This is the default App Implementation." << std::endl;
+
+	m_wX = wX;
+	m_wY = wY;
 
 	initWindow();
 	initGraphics();
@@ -88,7 +91,7 @@ int GFXApp::initWindow()
 
 	RegisterClassEx(&wc);
 
-	RECT wr = { 0, 0, 800, 600 };
+	RECT wr = { 0, 0, m_wX, m_wY };
 	AdjustWindowRect(&wr, WS_OVERLAPPEDWINDOW, FALSE);
 
 	HWND hWnd = CreateWindowEx(NULL,

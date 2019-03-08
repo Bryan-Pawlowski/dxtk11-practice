@@ -13,7 +13,7 @@ int main()
 
 	GFXApp * App = AppManager::selectApp(appConf.appName.c_str());
 
-	if(App != nullptr) App->main();
+	if(App != nullptr) App->main(appConf.wX, appConf.wY);
 
 	return 0;
 }
