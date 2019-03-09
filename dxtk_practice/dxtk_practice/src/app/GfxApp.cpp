@@ -56,6 +56,7 @@ int GFXApp::mainLoop()
 	{
 		if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
 		{
+			Keyboard::ProcessMessage(msg.message, msg.wParam, msg.lParam);
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 

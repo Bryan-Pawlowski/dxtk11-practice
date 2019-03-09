@@ -1,7 +1,19 @@
 #include "TriangleApp.h"
+#include "ScreenGrab.h"
+#include <wincodec.h>
 #include <iostream>
 
 //#pragma comment(lib, "DirectXTK.lib")
+#pragma comment(lib, "runtimeobject.lib")
+
+#if (_WIN32_WINNT >= 0x0A00 /*_WIN32_WINNT_WIN10*/)
+Microsoft::WRL::Wrappers::RoInitializeWrapper initialize(RO_INIT_MULTITHREADED);
+// error
+#else
+HRESULT hr = CoInitializeEx(nullptr, COINITBASE_MULTITHREADED);
+if (FAILED(hr))
+// error
+#endif
 
 int TriangleApp::initScene() 
 {
@@ -14,6 +26,7 @@ TriangleApp::TriangleApp()
 {
 	_hInstance = GetHInstance();
 	_hPrevInstance = GetHPrevInstance();
+	m_pKeyboard = std::make_unique<Keyboard>();
 }
 
 int TriangleApp::main(UINT wX, UINT wY)
@@ -57,6 +70,21 @@ int TriangleApp::initPipeline()
 	return 0;
 }
 
+int TriangleApp::Update() 
+{
+	auto kb = m_pKeyboard->GetState();
+	static bool spaceDown = false;
+	if(kb.Space){ 
+		spaceDown = true;
+	}
+	else if (spaceDown) {
+		m_takeScreenshot = true;
+		spaceDown = false;
+	}
+
+	return 0;
+}
+
 int TriangleApp::Render() 
 {
 	FLOAT color[4] = { 0.0f, 0.2f, 0.4f, 1.0f };
@@ -76,6 +104,22 @@ int TriangleApp::Render()
 	m_batch->DrawTriangle(Triangle[0], Triangle[1], Triangle[2]);
 
 	m_batch->End();
+
+	#pragma region Take Screenshot
+	if (m_takeScreenshot)
+	{
+		std::cout << "Trying to take screenshot!" << std::endl;
+		ComPtr<ID3D11Texture2D> backBuffer;
+		HRESULT hr = swapchain->GetBuffer(0, __uuidof(ID3D11Texture2D), reinterpret_cast<LPVOID*>(backBuffer.GetAddressOf()) );
+		if (SUCCEEDED(hr))
+		{
+			hr = SaveWICTextureToFile(devcon.Get(), backBuffer.Get(), GUID_ContainerFormatJpeg, L"Screenshot.jpg");
+		}
+		if (SUCCEEDED(hr)) std::cout << "SUCCESS!" << std::endl;
+		else std::cout << "FAILED!" << std::endl;
+		m_takeScreenshot = false;
+	}
+	#pragma endregion
 
 	swapchain->Present(0, 0);
 

@@ -2,6 +2,10 @@
 #include "GfxApp.h"
 #include <vector>
 
+using namespace DirectX;
+using namespace DirectX::SimpleMath;
+
+
 class TriangleApp : public GFXApp
 {
 private:
@@ -12,6 +16,8 @@ private:
 		{Vector3(0.5f, -0.5f, 0.5f), Colors::Green},
 		{Vector3(-0.5f, -0.5f, 0.5f), Colors::Blue} 
 	};
+
+	bool m_takeScreenshot = false;
 
 public:
 	ComPtr<ID3D11InputLayout>												m_pLayout;
@@ -27,6 +33,7 @@ public:
 	virtual int main(UINT, UINT);
 	virtual int initScene();
 	virtual int initPipeline();
+	virtual int Update();
 	virtual int Render();
 
 	TriangleApp();

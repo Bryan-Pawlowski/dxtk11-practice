@@ -68,7 +68,6 @@ namespace
         {
             DebugTrace("WARNING: ScreenGrab does not support 2D arrays, cubemaps, or mipmaps; only the first surface is written. Consider using DirectXTex instead.\n");
         }
-
         ComPtr<ID3D11Device> d3dDevice;
         pContext->GetDevice(d3dDevice.GetAddressOf());
 
